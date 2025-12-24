@@ -87,12 +87,13 @@ pip install langchain-text-splitters pypdf faiss-cpu langchain_classic
 
 ### Get Your API Key
 
-**Option 1: Google Gemini (Used in this implementation)**
+**Option 1: Google Gemini**
 1. Visit [Google AI Studio](https://aistudio.google.com/api-keys)
 2. Generate your free API key
 3. Add it to the code: `os.environ['GOOGLE_API_KEY'] = "YOUR_KEY_HERE"`
+4. Use the Google Gemini version from `gemini_rag.ipynb`
 
-**Option 2: OpenAI (Alternative implementation)**
+**Option 2: OpenAI**
 1. Visit [OpenAI Platform](https://platform.openai.com/api-keys)
 2. Sign up and generate your API key
 3. Add it to the code: `os.environ['OPENAI_API_KEY'] = "YOUR_KEY_HERE"`
@@ -100,7 +101,15 @@ pip install langchain-text-splitters pypdf faiss-cpu langchain_classic
 
 ### Required Files
 - Place your resume PDF in the same directory as the script
-- Name it `resume.pdf` or update the loader path
+- Name it `resume.pdf` or update the path in the Document Loader:
+  ```python
+  loader = PyPDFLoader('resume.pdf')  # Change 'resume.pdf' to your file path
+  ```
+  or
+  
+  ```python
+  loader = PyPDFLoader('Rahul_Namilakonda.pdf')  # Change 'resume.pdf' to your file path
+  ```
 
 ## Example Questions You Can Ask
 
